@@ -39,14 +39,14 @@ class UserservicesModel extends Model
 
     }
 
-   public static function update_radius($fields)
+   public static function update_radius($fields, $fabio_service_id)
    {
 	
 	/*Filter the array data and get only data elements with values*/
 	$fields =  array_filter($fields);
 	
 	/*itemporary static ip for now and update record base on the on the fields inputs*/
-	$update_services = UserservicesModel::where("id",'31826')->update($fields);
+	$update_services = UserservicesModel::where("id",$fabio_service_id)->update($fields);
 	return $update_services;
    }
 
